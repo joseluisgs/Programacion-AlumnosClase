@@ -37,7 +37,7 @@ Codificado con :sparkling_heart: por [José Luis González Sánchez](https://twi
     height="30">
     </a> &nbsp;&nbsp;
     <a href="https://github.com/joseluisgs" target="_blank">
-        <img src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png" 
+        <img src="https://distreau.com/github.svg" 
     height="30">
     </a> &nbsp;&nbsp;
     <a href="https://www.linkedin.com/in/joseluisgonsan" target="_blank">
