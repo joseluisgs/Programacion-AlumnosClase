@@ -1,4 +1,4 @@
-package es.joseluisgs.dam.model;
+package es.joseluisgs.dam.models;
 
 /**
  * Clase que representa un alumno/a.
@@ -42,8 +42,7 @@ public class Alumno {
     /**
      * Set el nombre del alumno
      *
-     * @param nombre Nombre del alumno
-     *               Si el nombre es null o vacio, lanza una excepcion
+     * @param nombre Nombre del alumno. Hasta 100 caracteres (0-99). Si el nombre es null o vacio, lanza una excepcion
      */
     public void setNombre(String nombre) {
         if (nombre != null && nombre.trim().length() > 0 && nombre.trim().length() < 100) {
@@ -65,8 +64,7 @@ public class Alumno {
     /**
      * Asigna la edad de un alumno
      *
-     * @param edad Edad del alumno
-     *             Si la edad es menor que 0 o mayor que 100, lanza una excepcion
+     * @param edad Edad del alumno. Si la edad es menor que 0 o mayor que 100, lanza una excepcion
      */
     public void setEdad(int edad) {
         if (edad > 0 && edad < 100) {
@@ -88,8 +86,7 @@ public class Alumno {
     /**
      * Asigna la nota de un alumno
      *
-     * @param nota Nota del alumno
-     *             Si la nota es menor que 0 o mayor que 10, lanza una excepcion
+     * @param nota Nota del alumno. Entre 0 y 10. Si la nota es menor que 0 o mayor que 10, lanza una excepcion
      */
     public void setNota(float nota) {
         if (nota >= 0.0f && nota <= 10.0f) {

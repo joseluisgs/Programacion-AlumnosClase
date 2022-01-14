@@ -1,17 +1,22 @@
 package es.joseluisgs.dam;
 
-import es.joseluisgs.dam.model.Alumno;
+import es.joseluisgs.dam.creators.AlumnoCreator;
+import es.joseluisgs.dam.models.Alumno;
 
 /**
  * Hello world!
  */
 public class App {
     public static void main(String[] args) {
-        Alumno alumno = new Alumno("Pepe", 20, 8.25f);
-        System.out.println(alumno.getNombre());
-        System.out.println(alumno.getEdad());
-        System.out.println(alumno.getNota());
-        System.out.println(alumno.getCalificacion());
-        System.out.println(alumno);
+        AlumnoCreator ac = new AlumnoCreator();
+        // Directamente
+        Alumno a1 = new Alumno("Pepe", 20, 8.25f);
+        System.out.println(a1);
+        // Con constructor
+        Alumno a2 = ac.createFromTerminal();
+        System.out.println(a2);
+        Alumno a3 = ac.createRandom();
+        System.out.println(a3);
+
     }
 }

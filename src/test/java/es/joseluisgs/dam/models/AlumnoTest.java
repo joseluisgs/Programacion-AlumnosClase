@@ -1,4 +1,4 @@
-package es.joseluisgs.dam.model;
+package es.joseluisgs.dam.models;
 
 import org.junit.jupiter.api.*;
 
