@@ -1,5 +1,7 @@
 package es.joseluisgs.dam.models;
 
+import java.util.Objects;
+
 /**
  * Clase que representa un alumno/a.
  */
@@ -133,5 +135,18 @@ public class Alumno {
                 ", nota=" + nota +
                 ", calificacion='" + calificacion + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Alumno alumno = (Alumno) o;
+        return edad == alumno.edad && Float.compare(alumno.nota, nota) == 0 && nombre.equals(alumno.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombre, edad, nota);
     }
 }
