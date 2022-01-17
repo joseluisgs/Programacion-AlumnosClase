@@ -214,4 +214,86 @@ public class Clase {
         float media = suma / numAlumnos;
         return Math.round(media * 100.0f) / 100.0f;
     }
+
+    public String findByCalificacion(String calificacion) {
+        String result = "";
+        for (int i = 0; i < MAX_ALUMNOS; i++) {
+            if (alumnos[i] != null &&
+                    alumnos[i].getCalificacion().toLowerCase().equals(calificacion.toLowerCase())) {
+                result += (i + 1) + "- " + alumnos[i].toString() + "\n";
+            }
+        }
+        return result;
+    }
+
+    public String findByNombre(String nombre) {
+        String result = "";
+        for (int i = 0; i < MAX_ALUMNOS; i++) {
+            if (alumnos[i] != null &&
+                    alumnos[i].getNombre().toLowerCase().equals(nombre.toLowerCase())) {
+                result += (i + 1) + "- " + alumnos[i].toString() + "\n";
+            }
+        }
+        return result;
+    }
+
+    public void orderByNotaDesc() {
+        Alumno aux;
+        // Utilizamos el método de ordenación burbuja
+        for (int i = 0; i < MAX_ALUMNOS; i++) {
+            for (int j = i + 1; j < MAX_ALUMNOS; j++) {
+                if (alumnos[i] != null && alumnos[j] != null &&
+                        alumnos[i].getNota() < alumnos[j].getNota()) {
+                    aux = alumnos[i];
+                    alumnos[i] = alumnos[j];
+                    alumnos[j] = aux;
+                }
+            }
+        }
+    }
+
+    public void orderByNotaAsc() {
+        Alumno aux;
+        // Utilizamos el método de ordenación burbuja
+        for (int i = 0; i < MAX_ALUMNOS; i++) {
+            for (int j = i + 1; j < MAX_ALUMNOS; j++) {
+                if (alumnos[i] != null && alumnos[j] != null &&
+                        alumnos[i].getNota() > alumnos[j].getNota()) {
+                    aux = alumnos[i];
+                    alumnos[i] = alumnos[j];
+                    alumnos[j] = aux;
+                }
+            }
+        }
+    }
+
+    public void orderByNombreAsc() {
+        Alumno aux;
+        // Utilizamos el método de ordenación burbuja
+        for (int i = 0; i < MAX_ALUMNOS; i++) {
+            for (int j = i + 1; j < MAX_ALUMNOS; j++) {
+                if (alumnos[i] != null && alumnos[j] != null &&
+                        alumnos[i].getNombre().toLowerCase().compareTo(alumnos[j].getNombre().toLowerCase()) > 0) {
+                    aux = alumnos[i];
+                    alumnos[i] = alumnos[j];
+                    alumnos[j] = aux;
+                }
+            }
+        }
+    }
+
+    public void orderByNombreDesc() {
+        Alumno aux;
+        // Utilizamos el método de ordenación burbuja
+        for (int i = 0; i < MAX_ALUMNOS; i++) {
+            for (int j = i + 1; j < MAX_ALUMNOS; j++) {
+                if (alumnos[i] != null && alumnos[j] != null &&
+                        alumnos[i].getNombre().toLowerCase().compareTo(alumnos[j].getNombre().toLowerCase()) < 0) {
+                    aux = alumnos[i];
+                    alumnos[i] = alumnos[j];
+                    alumnos[j] = aux;
+                }
+            }
+        }
+    }
 }

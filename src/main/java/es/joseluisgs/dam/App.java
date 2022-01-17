@@ -75,6 +75,27 @@ public class App {
         System.out.println("Alumnos Suspensos/as: \n" + clase.getListaSuspensos());
         System.out.println();
         System.out.println("Nota Media: " + clase.getNotaMedia());
+        System.out.println();
+        System.out.println("Alumnos con Notable: \n" + clase.findByCalificacion("Notable"));
+        System.out.println();
+        System.out.println("Alumnos que se llaman Pepe: \n" + clase.findByNombre("Pepe"));
+        System.out.println();
+        clase.orderByNotaDesc();
+        System.out.println("Alumnos ordenados por nota DESC:");
+        System.out.println(clase.readAll());
+        System.out.println();
+        clase.orderByNotaAsc();
+        System.out.println("Alumnos ordenados por nota ASC:");
+        System.out.println(clase.readAll());
+        System.out.println();
+        clase.orderByNombreAsc();
+        System.out.println("Alumnos ordenados por nombre ASC:");
+        System.out.println(clase.readAll());
+        System.out.println();
+        clase.orderByNombreDesc();
+        System.out.println("Alumnos ordenados por nombre DESC:");
+        System.out.println(clase.readAll());
+        System.out.println();
 
     }
 }
