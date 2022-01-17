@@ -29,5 +29,12 @@ public class App {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
+
+        Alumno a3 = new Alumno("Juan", 25, 8.5f);
+        clase.update(a3, 0);
+
+        System.out.println(clase.readAll());
+        
+
     }
 }
