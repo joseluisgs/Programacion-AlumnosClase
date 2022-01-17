@@ -10,6 +10,7 @@ public class Alumno {
     private int edad = 0;
     private float nota = 0.0f;
     private String calificacion = "";
+    
 
     /**
      * Constructor de alumno.
@@ -29,6 +30,7 @@ public class Alumno {
         setNota(nota);
         calificacion = calcularCalificacion();
     }
+
 
     /** Getter and Setter */
 
