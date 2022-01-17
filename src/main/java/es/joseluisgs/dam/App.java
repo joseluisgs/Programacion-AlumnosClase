@@ -22,13 +22,36 @@ public class App {
 
         try {
             System.out.println("Alumano/a: " + clase.read(0));
-
-            System.out.println("Alumano/a: " + clase.read(31));
-
-            System.out.println("Alumano/a: " + clase.read(5));
         } catch (Exception e) {
-            System.err.println(e.getMessage());
+            e.printStackTrace();
         }
+
+//        try {
+//            System.out.println("Alumano/a: " + clase.read(31));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        try {
+//            System.out.println("Alumano/a: " + clase.read(5));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+//        Alumno a4 = clase.readOrNull(45);
+//        if (a4 != null) {
+//            System.out.println("Alumano/a: " + a4);
+//        } else {
+//            System.out.println("No existe el alumno/a");
+//        }
+
+        Alumno a4 = clase.readOrNull(1);
+        if (a4 != null) {
+            System.out.println("Alumano/a: " + a4);
+        } else {
+            System.out.println("No existe el alumno/a");
+        }
+
 
         Alumno a3 = new Alumno("Juan", 25, 8.5f);
         clase.update(a3, 0);
@@ -38,6 +61,20 @@ public class App {
         clase.delete(0);
 
         System.out.println(clase.readAll());
+
+        clase.initRandom();
+        System.out.println("Listado de Alumnos/as:");
+        System.out.println(clase.readAll());
+        System.out.println();
+        System.out.println("Número de Aprobados/as: " + clase.getNumeroAprobados() + " - " + clase.percentAprobados());
+        System.out.println();
+        System.out.println("Alumnos Aprobados/as: " + clase.getListaAprobados());
+        System.out.println();
+        System.out.println("Número de Suspensos: " + clase.getNumeroSuspensos() + " - " + clase.percentSuspensos());
+        System.out.println();
+        System.out.println("Alumnos Suspensos/as: " + clase.getListaSuspensos());
+        System.out.println();
+        System.out.println("Nota Media: " + clase.getNotaMedia());
 
     }
 }

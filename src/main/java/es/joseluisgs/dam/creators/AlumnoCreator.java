@@ -53,7 +53,7 @@ public class AlumnoCreator {
      * @return edad aleatoria
      */
     private int edadRandom() {
-        return (int) (Math.random() * 100);
+        return (int) (Math.random() * 99 + 1);
     }
 
     /**
