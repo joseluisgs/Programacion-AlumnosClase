@@ -72,11 +72,32 @@ public class AlumnoCreator {
 
     /**
      * Genera una nota aleatoria
-     *
+     * 30% 1.0 a 4.99    ---- 0 a 30
+     * 10% 5.00 y 5.99 ---- 30 a 40
+     * 30% entre 6 y 6.99 ----- 40 a 70
+     * 20% entre 7 y 8.99 ----- 70 a 90
+     * 10 % entre 9 y 10 ----- 90 a 100
      * @return nota aleatoria
      */
     private float notaRandom() {
-        return (float) (Math.random() * 10);
+        int porcentaje = (int) (Math.random() * 100);
+        // Min + (int)(Math.random() * ((Max - Min) + 1))
+        if (porcentaje < 30) {
+            // Suspenso
+            return (float) (1.0 + (Math.random() * (4.99 - 1.0)));
+        } else if (porcentaje < 40) {
+            // Suficiente
+            return (float) (5.0 + (Math.random() * (5.99 - 5.0)));
+        } else if (porcentaje < 70) {
+            // Bien
+            return (float) (6.0 + (Math.random() * (6.99 - 6.0)));
+        } else if (porcentaje < 90) {
+            // Notable
+            return (float) (7.0 + (Math.random() * (8.99 - 7.0)));
+        } else {
+            // Sobresaliente
+            return (float) (9.0 + (Math.random()));
+        }
     }
 
     /**

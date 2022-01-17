@@ -119,7 +119,7 @@ public class Alumno {
         if (nota < 5.0f) {
             return "Suspenso";
         } else if (nota <= 5.99f) {
-            return "Aprobado";
+            return "Suficiente";
         } else if (nota <= 6.99f) {
             return "Bien";
         } else if (nota <= 8.99f) {
