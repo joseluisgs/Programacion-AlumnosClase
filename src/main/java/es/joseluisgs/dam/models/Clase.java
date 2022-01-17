@@ -94,6 +94,18 @@ public class Clase {
         }
     }
 
+    public void delete(int posicion) {
+        if (posicion < MAX_ALUMNOS && posicion >= 0) {
+            if (alumnos[posicion] != null) {
+                alumnos[posicion] = null;
+            } else {
+                System.err.println("No hay alumno en la posición " + posicion);
+            }
+        } else {
+            System.err.println("No se puede actualizar el alumno en la posición " + posicion + " porque excede el tamaño de la clase");
+        }
+    }
+
     @Override
     public String toString() {
         return "Clase{" +

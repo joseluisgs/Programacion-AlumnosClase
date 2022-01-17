@@ -34,7 +34,10 @@ public class App {
         clase.update(a3, 0);
 
         System.out.println(clase.readAll());
-        
+
+        clase.delete(0);
+
+        System.out.println(clase.readAll());
 
     }
 }
