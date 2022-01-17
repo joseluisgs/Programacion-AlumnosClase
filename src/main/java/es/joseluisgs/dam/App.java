@@ -68,11 +68,11 @@ public class App {
         System.out.println();
         System.out.println("Número de Aprobados/as: " + clase.getNumeroAprobados() + " - " + clase.percentAprobados());
         System.out.println();
-        System.out.println("Alumnos Aprobados/as: " + clase.getListaAprobados());
+        System.out.println("Alumnos Aprobados/as: \n" + clase.getListaAprobados());
         System.out.println();
         System.out.println("Número de Suspensos: " + clase.getNumeroSuspensos() + " - " + clase.percentSuspensos());
         System.out.println();
-        System.out.println("Alumnos Suspensos/as: " + clase.getListaSuspensos());
+        System.out.println("Alumnos Suspensos/as: \n" + clase.getListaSuspensos());
         System.out.println();
         System.out.println("Nota Media: " + clase.getNotaMedia());
 

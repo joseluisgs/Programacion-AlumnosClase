@@ -2,6 +2,7 @@ package es.joseluisgs.dam.creators;
 
 import es.joseluisgs.dam.models.Alumno;
 import es.joseluisgs.dam.utils.Input;
+import es.joseluisgs.dam.utils.Sorteo;
 
 public class AlumnoCreator {
     /**
@@ -49,11 +50,24 @@ public class AlumnoCreator {
 
     /**
      * Genera una edad aleatoria
-     *
+     * 20% 18 y 20    ---- 0 a 20
+     * 30% entre 20 y 25 ---- 20 a 50
+     * 40% entre 25 y 30 ----- 50 a 90
+     * 10 % entre 30 y 40 ----- 90 a 100
      * @return edad aleatoria
      */
     private int edadRandom() {
-        return (int) (Math.random() * 99 + 1);
+        int porcentaje = (int) (Math.random() * 100);
+        // Min + (int)(Math.random() * ((Max - Min) + 1))
+        if (porcentaje < 20) {
+            return 18 + (int)(Math.random() * ((20 - 18) + 1));
+        } else if (porcentaje < 50) {
+            return 20 + (int)(Math.random() * ((25 - 20) + 1));
+        } else if (porcentaje < 90) {
+            return 25 + (int)(Math.random() * ((30 - 25) + 1));
+        } else {
+            return 30 + (int)(Math.random() * ((40 - 30) + 1));
+        }
     }
 
     /**
