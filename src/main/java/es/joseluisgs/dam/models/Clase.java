@@ -219,7 +219,8 @@ public class Clase {
         String result = "";
         for (int i = 0; i < MAX_ALUMNOS; i++) {
             if (alumnos[i] != null &&
-                    alumnos[i].getCalificacion().toLowerCase().equals(calificacion.toLowerCase())) {
+                    alumnos[i].getCalificacion()
+                            .equalsIgnoreCase(calificacion.trim())) {
                 result += (i + 1) + "- " + alumnos[i].toString() + "\n";
             }
         }
@@ -230,7 +231,7 @@ public class Clase {
         String result = "";
         for (int i = 0; i < MAX_ALUMNOS; i++) {
             if (alumnos[i] != null &&
-                    alumnos[i].getNombre().toLowerCase().equals(nombre.toLowerCase())) {
+                    alumnos[i].getNombre().equalsIgnoreCase(nombre.trim())) {
                 result += (i + 1) + "- " + alumnos[i].toString() + "\n";
             }
         }
@@ -273,7 +274,11 @@ public class Clase {
         for (int i = 0; i < MAX_ALUMNOS; i++) {
             for (int j = i + 1; j < MAX_ALUMNOS; j++) {
                 if (alumnos[i] != null && alumnos[j] != null &&
-                        alumnos[i].getNombre().toLowerCase().compareTo(alumnos[j].getNombre().toLowerCase()) > 0) {
+                        alumnos[i].getNombre()
+                                .toLowerCase()
+                                .compareTo(alumnos[j]
+                                        .getNombre()
+                                        .toLowerCase()) > 0) {
                     aux = alumnos[i];
                     alumnos[i] = alumnos[j];
                     alumnos[j] = aux;
@@ -288,12 +293,50 @@ public class Clase {
         for (int i = 0; i < MAX_ALUMNOS; i++) {
             for (int j = i + 1; j < MAX_ALUMNOS; j++) {
                 if (alumnos[i] != null && alumnos[j] != null &&
-                        alumnos[i].getNombre().toLowerCase().compareTo(alumnos[j].getNombre().toLowerCase()) < 0) {
+                        alumnos[i].getNombre()
+                                .toLowerCase()
+                                .compareTo(alumnos[j].getNombre()
+                                        .toLowerCase()) < 0) {
                     aux = alumnos[i];
                     alumnos[i] = alumnos[j];
                     alumnos[j] = aux;
                 }
             }
+        }
+    }
+
+    // Quicksort alumnos
+    public void orderByNotaQuickSort() {
+        quicksort(0, MAX_ALUMNOS - 1);
+    }
+
+    private void quicksort(int izq, int der) {
+        int i, j, central;
+        Alumno pivote;
+        i = izq;
+        j = der;
+        central = (i + j) / 2;
+        pivote = alumnos[central];
+        do {
+            while (alumnos[i].getNota() < pivote.getNota()) {
+                i++;
+            }
+            while (alumnos[j].getNota() > pivote.getNota()) {
+                j--;
+            }
+            if (i <= j) {
+                Alumno temp = alumnos[i];
+                alumnos[i] = alumnos[j];
+                alumnos[j] = temp;
+                i++;
+                j--;
+            }
+        } while (i <= j);
+        if (izq < j) {
+            quicksort(izq, j);
+        }
+        if (i < der) {
+            quicksort(i, der);
         }
     }
 }

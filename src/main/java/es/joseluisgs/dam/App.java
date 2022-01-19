@@ -66,11 +66,11 @@ public class App {
         System.out.println("Listado de Alumnos/as:");
         System.out.println(clase.readAll());
         System.out.println();
-        System.out.println("Número de Aprobados/as: " + clase.getNumeroAprobados() + " - " + clase.percentAprobados());
+        System.out.println("Número de Aprobados/as: " + clase.getNumeroAprobados() + " - " + clase.percentAprobados() + "%");
         System.out.println();
         System.out.println("Alumnos Aprobados/as: \n" + clase.getListaAprobados());
         System.out.println();
-        System.out.println("Número de Suspensos: " + clase.getNumeroSuspensos() + " - " + clase.percentSuspensos());
+        System.out.println("Número de Suspensos: " + clase.getNumeroSuspensos() + " - " + clase.percentSuspensos() + "%");
         System.out.println();
         System.out.println("Alumnos Suspensos/as: \n" + clase.getListaSuspensos());
         System.out.println();
@@ -96,6 +96,13 @@ public class App {
         System.out.println("Alumnos ordenados por nombre DESC:");
         System.out.println(clase.readAll());
         System.out.println();
-
+        clase.orderByNombreDesc();
+        System.out.println("Alumnos ordenados por nombre DESC:");
+        System.out.println(clase.readAll());
+        System.out.println();
+        clase.orderByNotaQuickSort();
+        System.out.println("Alumnos ordenados por QuickSort:");
+        System.out.println(clase.readAll());
+        System.out.println();
     }
 }
