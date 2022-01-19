@@ -216,26 +216,28 @@ public class Clase {
     }
 
     public String findByCalificacion(String calificacion) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < MAX_ALUMNOS; i++) {
             if (alumnos[i] != null &&
                     alumnos[i].getCalificacion()
                             .equalsIgnoreCase(calificacion.trim())) {
-                result += (i + 1) + "- " + alumnos[i].toString() + "\n";
+                result.append(i + 1).append("- ")
+                        .append(alumnos[i].toString()).append("\n");
             }
         }
-        return result;
+        return result.toString();
     }
 
     public String findByNombre(String nombre) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < MAX_ALUMNOS; i++) {
             if (alumnos[i] != null &&
                     alumnos[i].getNombre().equalsIgnoreCase(nombre.trim())) {
-                result += (i + 1) + "- " + alumnos[i].toString() + "\n";
+                result.append(i + 1).append("- ")
+                        .append(alumnos[i].toString()).append("\n");
             }
         }
-        return result;
+        return result.toString();
     }
 
     public void orderByNotaDesc() {
