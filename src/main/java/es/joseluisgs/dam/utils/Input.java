@@ -6,14 +6,14 @@ import java.util.Scanner;
  * Clase que permite leer una entrada por teclado.
  */
 public class Input {
-    Scanner sc = new Scanner(System.in);
+    private static Scanner sc = new Scanner(System.in);
 
     /**
      * Lee una linea entrada por teclado. Devuelve el String
      *
      * @return La entrada.
      */
-    public String readLine() {
+    public static String readLine() {
         String line = "";
         do {
             line = sc.nextLine();
@@ -26,7 +26,7 @@ public class Input {
      *
      * @return El entero.
      */
-    public int readInt() {
+    public static int readInt() {
         int i = 0;
         boolean ok = false;
         do {
@@ -46,7 +46,7 @@ public class Input {
      *
      * @return El float.
      */
-    public float readFloat() {
+    public static float readFloat() {
         float f = 0;
         boolean ok = false;
         do {
@@ -66,7 +66,7 @@ public class Input {
      *
      * @return El double.
      */
-    public double readDouble() {
+    public static double readDouble() {
         double d = 0;
         boolean ok = false;
         do {
@@ -84,7 +84,7 @@ public class Input {
     /**
      * Lee un boolean por teclado
      */
-    public boolean readBoolean() {
+    public static boolean readBoolean() {
         boolean b = false;
         boolean ok = false;
         do {

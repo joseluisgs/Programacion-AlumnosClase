@@ -6,11 +6,13 @@ import java.util.Objects;
  * Clase que representa un alumno/a.
  */
 public class Alumno {
+    private static int idCounter = 1;
     private String nombre = "";
     private int edad = 0;
     private float nota = 0.0f;
     private String calificacion = "";
-    
+    private int id = 0;
+
 
     /**
      * Constructor de alumno.
@@ -29,10 +31,17 @@ public class Alumno {
         setEdad(edad);
         setNota(nota);
         calificacion = calcularCalificacion();
+        id = idCounter++;
     }
 
 
-    /** Getter and Setter */
+    /**
+     * Getter and Setter
+     */
+
+    public int getId() {
+        return id;
+    }
 
     /**
      * Nombre del Alumno
@@ -132,7 +141,8 @@ public class Alumno {
     @Override
     public String toString() {
         return "Alumno{" +
-                "nombre='" + nombre + '\'' +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
                 ", edad=" + edad +
                 ", nota=" + nota +
                 ", calificacion='" + calificacion + '\'' +
